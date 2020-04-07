@@ -1,0 +1,35 @@
+\newpage
+
+\section {Node Format}
+The file head is preceded by the main node list. The number of elements the
+list contains is know at this point in time.
+
+Each node consists of a 16 \keyword{byte} node head, followed by a node name
+string and the node content (if any).Every array field in a node \musts be 16
+\keyword{byte} aligned. This is reminded where needed. The node head format
+is described below.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|p{10cm}|}
+        \hline
+        Offset & Length & Type & Description\\
+        \hline
+        \hex{00} & \hex{04} & \keyword{int} & Node content type. Must be a value in the constant group 
+                                              Type Value. (e.g \constant{TYPE\_ANY})\\\hline
+        \hex{04} & \hex{04} & \keyword{int} & Node array index. \\\hline
+        \hex{08} & \hex{04} & \keyword{int} & Node key length. \\\hline
+        \hex{0C} & \hex{04} & \keyword{int} & Node content length (in bytes) \\\hline
+    \end{tabular}
+\end{table}
+
+The node head is followed by the node key. The node key is a string that \musts
+be aligned to 16 \keyword{byte}s. If the node key length is zero, this field
+\musts be zero bytes long. It \musts not contain a terminating null 
+character, however strings not aligned to 16 \keyword{byte}s must be padded
+with null characters.
+
+The node key is followed by the node content. The node content is a generic 
+buffer aligned to 16 \keyword{byte}s. The buffer \musts be padded with zero
+if the length is not 16 \keyword{byte}s aligned. If a string is contained
+in the buffer, it \shoulds not contain a terminating null character.

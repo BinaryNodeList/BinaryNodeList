@@ -1,0 +1,54 @@
+\section {Constants}
+\label{section_constants}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|p{7cm}|}
+	\hline
+	Name & Value (32-bit hex) & Description\\
+	\hline
+	\constant{MAGIC\_WORD}  & \hex{6C6E6225} & File format magic word equivalent to the string ``\texttt{\%bnl}''.\\
+	\hline
+	\constant{VERSION\_MIN} & \hex{01000000} & Minimum acceptable file version by this document's specification.\\
+	\hline
+	\constant{VERSION\_MAX} & \hex{01FFFFFF} & Maximum acceptable file version by this document's specification.\\
+	\hline
+\end{tabular}
+\caption {Table of generic constants.}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|p{9cm}|}
+	\hline
+	Type Name & Value (hex) & Type Description\\
+	\hline
+	\constant{TYPE\_ANY} 	  & \hex{00} & Type for generic streams.\\\hline
+	\constant{TYPE\_STRING} & \hex{01} & Type for a ASCII or UTF-8 encoded \keyword{string}.\\\hline
+	\constant{TYPE\_VEC1B}  & \hex{11} & Type for a one dimentional array of \keyword{byte}s.\\\hline
+	\constant{TYPE\_VEC2B}  & \hex{12} & Type for a two dimentional array of \keyword{byte}s.\\\hline
+	\constant{TYPE\_VEC3B}  & \hex{13} & Type for a three dimentional array of \keyword{byte}s.\\\hline
+	\constant{TYPE\_VEC4B}  & \hex{14} & Type for a four dimentional array of \keyword{byte}s.\\\hline
+	\constant{TYPE\_VEC1S}  & \hex{21} & Type for a one dimentional array of \keyword{short}s.\\\hline
+	\constant{TYPE\_VEC2S}  & \hex{22} & Type for a two dimentional array of \keyword{short}s.\\\hline
+	\constant{TYPE\_VEC3S}  & \hex{23} & Type for a three dimentional array of \keyword{short}s.\\\hline
+	\constant{TYPE\_VEC4S}  & \hex{24} & Type for a four dimentional array of \keyword{short}s.\\\hline
+	\constant{TYPE\_VEC1I}  & \hex{41} & Type for a one dimentional array of \keyword{int}s.\\\hline
+	\constant{TYPE\_VEC2I}  & \hex{42} & Type for a two dimentional array of \keyword{int}s.\\\hline
+	\constant{TYPE\_VEC3I}  & \hex{43} & Type for a three dimentional array of \keyword{int}s.\\\hline
+	\constant{TYPE\_VEC4I}  & \hex{44} & Type for a four dimentional array of \keyword{int}s.\\\hline
+	\constant{TYPE\_VEC1F}  & \hex{4A} & Type for a one dimentional array of \keyword{float}s.\\\hline
+	\constant{TYPE\_VEC2F}  & \hex{4B} & Type for a two dimentional array of \keyword{float}s.\\\hline
+	\constant{TYPE\_VEC3F}  & \hex{4C} & Type for a three dimentional array of \keyword{float}s.\\\hline
+	\constant{TYPE\_VEC4F}  & \hex{4D} & Type for a four dimentional array of \keyword{float}s.\\\hline
+	\constant{TYPE\_VEC1L}  & \hex{81} & Type for a one dimentional array of \keyword{long}s.\\\hline
+	\constant{TYPE\_VEC2L}  & \hex{82} & Type for a two dimentional array of \keyword{long}s.\\\hline
+	\constant{TYPE\_VEC3L}  & \hex{83} & Type for a three dimentional array of \keyword{long}s.\\\hline
+	\constant{TYPE\_VEC4L}  & \hex{84} & Type for a four dimentional array of \keyword{long}s.\\\hline
+	\constant{TYPE\_VEC1D}  & \hex{8A} & Type for a one dimentional array of \keyword{double}s.\\\hline
+	\constant{TYPE\_VEC2D}  & \hex{8B} & Type for a two dimentional array of \keyword{double}s.\\\hline
+	\constant{TYPE\_VEC3D}  & \hex{8C} & Type for a three dimentional array of \keyword{double}s.\\\hline
+	\constant{TYPE\_VEC4D}  & \hex{8D} & Type for a four dimentional array of \keyword{double}s.\\\hline
+\end{tabular}
+\caption {Table of Type Constants}
+\end{table}

@@ -1,0 +1,25 @@
+\section {File Header}
+Every valid Binary Node List \musts have a valid header. The header is 16 
+\keyword{byte}s long. Is is layed out as described in the table below.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|c|c|c|p{10cm}|}
+        \hline
+        Offset & Length & Type & Description\\
+        \hline
+        \hex{00} & \hex{04} & \keyword{int} & \Musts be equal to \constant{MAGIC\_WORD}.\\\hline
+        \hex{04} & \hex{04} & \keyword{int} & Version of Binary Node List this file was rendered with.
+                                              \Shoulds be in the range of \constant{MIN\_VERSION} and 
+                                              \constant{MAX\_VERSION}, both inclusive.\\\hline
+        \hex{08} & \hex{04} & \keyword{int} & Number of nodes this Binary Node List has.
+                                              \Musts be greater than zero.\\\hline
+        \hex{0C} & \hex{04} & \keyword{int} & Reserved for later use. \Shoulds be zero.\\\hline
+    \end{tabular}
+\end{table}
+
+\subsection{Implementation Suggestions}
+The programmer \shoulds read 16 bytes from the input stream to verify the file.
+The magic word \musts be validated, and the file version \shoulds be within the
+expected range. If the file version is out of range, the file \mays be read if
+it is not critical for proper operation of the target program.

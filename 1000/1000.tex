@@ -1,0 +1,40 @@
+\documentclass[a4paper, 12pt]{report}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{bold-extra}
+
+\title{
+Binary Node List Specification
+{\small\\
+	Version 1.0.0.0
+}
+}
+\author {H. Utku Maden}
+
+\input {usermacros.tex}
+
+\begin{document}
+\maketitle
+
+\chapter{Foreword}
+
+\input {changelog.tex}
+
+\input {purpose.tex}
+
+\input {conventions.tex}
+
+\input {definitions.tex}
+
+\chapter {File Specification}
+
+\input {head_format.tex}
+
+\input {node_format.tex}
+
+\chapter{Appendix}
+
+\input {format_constants.tex}
+
+\end{document}

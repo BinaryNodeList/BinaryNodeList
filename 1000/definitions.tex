@@ -1,0 +1,51 @@
+\section{Definitions}
+
+\paragraph{\Must}
+Any file that is ``Binary Node List'' compliant adheres to the statement including
+this word.
+
+\paragraph{\Should}
+The authors of this file format recommend statements with this word are followed.
+
+\paragraph{\May}
+Statements with this word imply that this statement can be followed if the 
+developer chooses to do so, or are generally implementation dependent.
+
+\paragraph{Endianness}
+Endianness is the order of bytes in a multiple byte wide integer numbers.
+
+\subparagraph{Little Endian}
+These integers are ordered from the least significant byte to the most
+significant byte.
+
+\subparagraph{Big Endian}
+These integers are ordered from the most significant byte to the least
+significant byte.
+
+\subsection{Data Types}
+This sub section describes the naming convention of data types and their equivelants
+in a couple other languages.
+
+\begin{table}[h!] 
+    \centering
+    \begin{tabular}{|c|c|c|p{6.63cm}|}
+        \hline
+        Type (C\#) & C/C++$^1$ (Win32$^2$) & Java & English\\
+        \hline
+        \keyword{byte} & \keyword{uint8\_t} (or \keyword{UINT8}) & \keyword{byte}$^3$ & An unsigned 1-byte wide integer type.\\\hline
+        \keyword{short} & \keyword{int16\_t} (or \keyword{INT16}) & \keyword{short} & A signed 2-bytes wide integer type.\\\hline
+        \keyword{int} & \keyword{int32\_t} or (or \keyword{INT32}) & \keyword{int} & A signed 4-bytes wide integer type.\\\hline
+        \keyword{float} & \keyword{float} & \keyword{float} & An IEEE 754 compliant single precision floating point number (4-byte wide)\\\hline
+        \keyword{long} & \keyword{int64\_t} (or \keyword{INT64}) & \keyword{long} & A signed 8-bytes wide integer type.\\\hline
+        \keyword{double} & \keyword{double} & \keyword{double} & An IEEE 754 compliant double precision floating point number (8-bytes wide)\\\hline
+    \end{tabular}
+    \caption{
+        Data types as used by this document (first column), in other programming languages and in English.\newline
+        {\footnotesize
+            \rule{3cm}{1pt}\newline
+            $^1${Some of these keywords are defined in the header \texttt{stdint.h}.}\newline
+            $^2${These types are defined in the header \texttt{BaseTsd.h}. It may lead to unportable code.}\newline
+            $^3${Java does not implement an unsigned 1-byte wide integer type. Implementors should be aware of this fact.}
+        }
+    }
+\end{table}
